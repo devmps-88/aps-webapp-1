@@ -28,6 +28,7 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddServerSideBlazor();
             services.AddControllers();
             services.AddTransient<JsonFileProductService>();
         }
@@ -57,6 +58,7 @@ namespace WebApplication1
             {
                 endpoints.MapRazorPages();
                 endpoints.MapControllers();
+                endpoints.MapBlazorHub();
                 //endpoints.MapGet("/product", (context) =>
                 //{
                 //    var products = app.ApplicationServices.GetService<JsonFileProductService>().GetProducts();

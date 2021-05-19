@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Bga9mJXDsf2UTdnLw9SzRheA0wJ6EfTs82uLLgr19obOHdmedh7RezK9aIVhEJUnJhhswqz789PcBR4xr3D4aQ==",
+  "dgSpecHash": "XrPkniByrij9Im6xBrLhnqJ2eBvquwzNptIKnZcrnzkbOQjFuOmGfFafwMgONINaTKv2/CflD55U8Fp4rzE9QA==",
   "success": true,
-  "projectFilePath": "C:\\ASPdotnet\\WebTest1\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "C:\\ASPdotnet\\aps-webapp-1\\WebTest1\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
