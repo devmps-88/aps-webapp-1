@@ -41,15 +41,44 @@ using ContosoCrafts.WebSite.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 26 "C:\ASPdotnet\aps-webapp-1\WebTest1\WebApplication1\Components\ProductList.razor"
+#line 74 "C:\ASPdotnet\aps-webapp-1\WebTest1\WebApplication1\Components\ProductList.razor"
        
-    Product selectProduct;
-    string selectProductId;
+    Product selectedProduct;
+    string selectedProductId;
 
     void SelectProduct(string productId)
     {
-        selectProductId = productId;
-        selectProduct = ProductService.GetProducts().First(x => x.Id == productId);
+        selectedProductId = productId;
+        selectedProduct = ProductService.GetProducts().First(x => x.Id == productId);
+        GetCurrentRating();
+    }
+
+    int currebtRating = 0;
+    int voteCount = 0;
+    string voteLabel;
+
+    void GetCurrentRating()
+    {
+        if (selectedProduct.Ratings == null)
+        {
+            currebtRating = 0;
+            voteCount = 0;
+        }
+        else
+        {
+            voteCount = selectedProduct.Ratings.Count();
+            voteLabel = voteCount > 1 ? "votes" : "vote";
+            currebtRating = selectedProduct.Ratings.Sum() / voteCount;
+        }
+
+        Console.WriteLine($"Current rating for {selectedProduct.Id}: {currebtRating}");
+    }
+
+    void SubmitRating(int rating)
+    {
+        Console.WriteLine($"Rating received for {selectedProduct.Id}: {rating}");
+        ProductService.AddRating(selectedProductId, rating);
+        SelectProduct(selectedProductId);
     }
 
 #line default
